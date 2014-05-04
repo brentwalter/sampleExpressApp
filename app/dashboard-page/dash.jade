@@ -1,0 +1,19 @@
+
+extend ../views/layout
+
+block content
+  p This is an overview of the current state of the appliation
+  h2 Donations
+  ul
+    each val, index in donations
+      if typeof val === 'object'
+        li= index + ':'
+          ul
+            each subval, subindex in val
+              li= subindex + ': ' + subval
+      else
+        li= index + ': ' + val
+  h2 Campaigns
+  ul
+    each val, index in campaigns
+      li= index + ': ' + val
