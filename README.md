@@ -26,6 +26,7 @@ That command will start the application on http://localhost:3000 using mock data
 
 ### Project Structure
 ````bash
+app.js              [MAIN FILE THAT INITIALIZES APPLICATION]
 app                 [HOLDS THE MAIN APPLICATION LOGIC]
 ├── campaigns-api   [EXTERNAL JSON API]
 │   └── index.js
