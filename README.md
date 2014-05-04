@@ -23,3 +23,29 @@ That command will start the application on http://localhost:3000 using mock data
 ### Data API Endpoints
 - `http://localhost:3000/api/donations`: get summary data of donations
 - `http://localhost:3000/api/campaigns`: get summary data of campaigns
+
+### Project Structure
+````bash
+app                 [HOLDS THE MAIN APPLICATION LOGIC]
+├── campaigns-api   [EXTERNAL JSON API]
+│   └── index.js
+├── dashboard-page  [RENDERS MAIN DASHBOARD PAGE]
+│   ├── dash.jade
+│   └── index.js
+├── donations-api   [EXTERNAL JSON API]
+│   └── index.js
+├── models          [RETURN DATA FROM DATABASE]
+│   ├── campaigns
+│   │   ├── index.js
+│   │   └── mock.js
+│   └── donations
+│       ├── index.js
+│       └── mock.js
+└── views            [SHARED TEMPLATE]
+    └── layout.jade
+config               [SETUP DATABASE CONNECTION]
+├── database.example.js
+└── database.js
+public                [SERVE STATIC ASSETS]
+└── style.css
+````
