@@ -9,12 +9,13 @@ You need to have [Node.js installed](http://nodejs.org) as well as [Grunt.js](ht
 1. Clone the repo: `git clone https://github.com/grassloot/dashboard.git`
 2. `cd dashboard`
 3. Install project dependencies: `npm install` (use sudo if necessary)
-4. Fill out the config/database.example.js file, and rename it to: database.js
+4. If you want to connect to a database, fill out the config/database.example.js file, and rename it to: database.js
+    - By default, this sample application will use mock data. To use the database, start your app with `NODE_ENV=production node app`
 
 
-Now you're ready to run the app: `node app`.
+To run this sample application in the default mode (development) use the command: `node app`.
 
-That command will start the application on port 3000.
+That command will start the application on port 3000, http://localhost:3000.
 
 ### Pages
 - `http://localhost:3000/`: view the dashboard page
