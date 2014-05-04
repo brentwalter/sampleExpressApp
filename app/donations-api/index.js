@@ -10,6 +10,7 @@ var model = (app.get('env') === "development") ? '../models/donations/mock' : '.
 var donation = require(model)();
 
 app.get('/api/donations', function(req, res) {
+  //make database requests and render the JSON
   async.parallel([
       donation.totalDonationDollars,
       donation.totalDonationCount,

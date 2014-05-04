@@ -10,6 +10,11 @@ app.get('/', function(req, res){
 
   var reqRoot = 'http://' + req.headers.host + '/api';
 
+  //DISCLAIMER: this is a really terrible way to get data.
+  // You should use the models, rather then requesting
+  // your own, external data api. I did it this way to demonstrate
+  // making http requests to external apis and aggregating their
+  // results.
   async.parallel({
     donations: function(callback) {
       request.get(reqRoot + '/donations', function(err, response, body) {
