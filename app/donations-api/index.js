@@ -3,8 +3,11 @@ var express = require('express');
 var app = module.exports = express();
 var async = require('async');
 
+//mock out model if in development mode (default)
+var model = (app.get('env') === "development") ? '../models/donations/mock' : '../models/donations';
+
 //initialize model
-var donation = require('../models/donations')();
+var donation = require(model)();
 
 app.get('/api/donations', function(req, res) {
   async.parallel([

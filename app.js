@@ -5,6 +5,8 @@ var server = app.listen(3000, function(){
   console.log('Listening on port %d', server.address().port);
 });
 
+console.log('Application running in', app.get('env'), 'mode.');
+
 //load modules
 var dashboard    = require('./app/dashboard-page');
 var donationsApi = require('./app/donations-api');
