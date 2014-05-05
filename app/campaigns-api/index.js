@@ -7,7 +7,7 @@ var async = require('async');
 var model = (app.get('env') === "development") ? '../models/campaigns/mock' : '../models/campaigns';
 
 //initialize campaigns models
-var campaign = require(model)();
+var campaign = require(model);
 
 app.get('/api/campaigns', function(req, res) {
   //make database requests and render the JSON

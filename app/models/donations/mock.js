@@ -1,4 +1,4 @@
-module.exports = function() {
+module.exports = (function() {
 
   return {
     totalDonationDollars: function(callback) {
@@ -40,5 +40,4 @@ module.exports = function() {
     }
 
   };
-
-};
+})();

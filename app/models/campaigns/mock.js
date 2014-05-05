@@ -1,5 +1,5 @@
 
-module.exports = function() {
+module.exports = (function() {
 
   return {
     activatedCampaignCount: function(callback) {
@@ -11,7 +11,6 @@ module.exports = function() {
       process.nextTick(function() {
         callback(null, [ { registeredCampaignCount: 2500 } ]);
       });
-
     }
   };
-};
+})();

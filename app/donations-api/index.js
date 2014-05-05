@@ -7,7 +7,7 @@ var async = require('async');
 var model = (app.get('env') === "development") ? '../models/donations/mock' : '../models/donations';
 
 //initialize model
-var donation = require(model)();
+var donation = require(model);
 
 app.get('/api/donations', function(req, res) {
   //make database requests and render the JSON
@@ -37,8 +37,5 @@ app.get('/api/donations', function(req, res) {
       }
     });
   });
-
-
-
 
 });
