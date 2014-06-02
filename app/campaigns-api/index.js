@@ -4,10 +4,10 @@ var app = module.exports = express();
 var async = require('async');
 
 //mock out model if in development mode (default)
-var model = (app.get('env') === "development") ? '../models/campaigns/mock' : '../models/campaigns';
+var campaignsModel = (app.get('env') === "development") ? '../models/campaigns/mock' : '../models/campaigns';
 
 //initialize campaigns models
-var campaign = require(model);
+var campaign = require(campaignsModel);
 
 app.get('/api/campaigns', function(req, res) {
   //make database requests and render the JSON
