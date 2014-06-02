@@ -1,4 +1,4 @@
-NH Node.js: Sample Express App
+Sample Express App
 =========
 
 
