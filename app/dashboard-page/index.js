@@ -10,7 +10,7 @@ app.get('/', function(req, res){
 
   var reqRoot = 'http://' + req.headers.host + '/api';
 
-  //DISCLAIMER: this is a really terrible way to get data.
+  //*WARNING: this is a really terrible way to get data.
   // You should use the models, rather then requesting
   // your own, external data api. I did it this way to demonstrate
   // making http requests to external apis and aggregating their
@@ -19,7 +19,7 @@ app.get('/', function(req, res){
     donations: function(callback) {
       request.get(reqRoot + '/donations', function(err, response, body) {
         if (err) {
-          callback(err);
+          return callback(err);
         }
         else if (response.statusCode == 200)  {
           callback(null, JSON.parse(body));
@@ -29,7 +29,7 @@ app.get('/', function(req, res){
     campaigns: function(callback) {
       request.get(reqRoot + '/campaigns', function(err, response, body) {
         if (err) {
-          callback(err);
+          return callback(err);
         }
         else if (response.statusCode == 200) {
           callback(null, JSON.parse(body));
